@@ -1,3 +1,5 @@
+/* Estilização do Sobre e do Formulário */
+
 #sobre-container{
     /* border: #f0f 2px solid; */
     display: flex;
@@ -70,8 +72,18 @@
 @media screen and (max-width: 750px){
    #form-contato-div button{
    
-    padding: 10px 30%;
+    padding: 10px 35%;
     
+}
+
+#form-contato-div{
+    display: block;
+    /* border: #f0f 2px solid; */
+    flex-direction: column;
+    width: 80%;
+    gap: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 }
 

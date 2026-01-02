@@ -1,3 +1,4 @@
+/* Estilização do Home */
 #home {
   
     min-height:70vh;
@@ -33,10 +34,11 @@
 
 @media screen and (max-width: 750px){
     #div-align{
-        margin-right: 10%;
-        margin-left: 10%;
-        align-items: center;
-        border: 2px blue solid;
+        /* margin-right: 10%;
+        margin-left: 10%; */
+        align-content: center;
+        padding-top: 12%;
+        /* border: 2px blue solid; */
     }
 
     #cta{

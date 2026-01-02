@@ -42,11 +42,11 @@ http://127.0.0.1:8000/visitante/landpage/
 
 ### 📂 Estrutura do Projeto
 
-projeto/
-│── visitante/
-│── projeto/
-│── static/
-│── manage.py
-└── README.md
+    projeto/
+    │── visitante/
+    │── projeto/
+    │── static/
+    │── manage.py
+    └── README.md
 
 

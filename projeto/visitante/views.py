@@ -28,7 +28,7 @@ def landpage(request):
 @login_required(login_url='login')  # Redireciona para a rota 'login' se não autenticado
 def painel_mensagens(request):
     mensagens = Contato.objects.all().order_by('-data_envio')
-    return render(request, 'painel.html', {'mensagens': mensagens})
+    return render(request, 'painel.html', context={'mensagens': mensagens})
     
     
 

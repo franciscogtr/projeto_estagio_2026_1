@@ -33,6 +33,12 @@
 }
 
 @media screen and (max-width: 750px){
+
+    #home {
+  
+        min-height:90vh;
+        
+    }
     #div-align{
         /* margin-right: 10%;
         margin-left: 10%; */

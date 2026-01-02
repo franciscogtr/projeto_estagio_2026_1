@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link rel="icon" type="image/png" sizes="35x35" href="{% static 'images/logo.png' %}">
-      <link rel="stylesheet" href="{% static 'css/header.css' %}">
-      <link rel="stylesheet" href="{% static 'css/home.css' %}">
-      <link rel="stylesheet" href="{% static 'css/contato.css' %}">
-      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="icon" type="image/png" sizes="35x35" href="{% static 'images/logo.png' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'css/header.css' %}">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <link rel="stylesheet" href="{% static 'css/contato.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/painel.css' %}">
 
     <title>Barber Agenda</title>
 </head>
@@ -19,9 +21,6 @@
                 <img src="{% static 'images/logo.png' %}" alt="Logo Barber Agenda" id="img_logo">
                 <p id="p-logo"> Barber Agenda </p>
             </nav>
-           <p class="p-text">
-                Bem-vindo, {{ user.username }}!
-           </p>
 
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
@@ -48,10 +47,24 @@
     </header>
     <main>
         <section id="dashboard-section">
-            <h1 class="title">Painel do Usuário</h1>
-            <p class="p-text">
-                Esta é a área restrita para usuários autenticados.
-            </p>
+            <h1 class="title">Bem-Vindo, {{ user.username }}!</h1>
+        </section>
+        <section id="message_section">
+            <p id="message_title">Mensagens Recebidas</p>
+            
+            <div id="messages_container">
+                {% if mensagens %}
+                    {% for mensagem in mensagens %}
+                        <div class="message_card">
+                            <p class="p-text"><strong>Nome:</strong> {{ mensagem.nome }}</p>
+                            <p class="p-text"><strong>Email:</strong> {{ mensagem.email }}</p>
+                            <p class="p-text"><strong>Mensagem:</strong> {{ mensagem.mensagem }}</p>
+                            <p class="p-text"><strong>Data:</strong> {{ mensagem.data_envio }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="p-text">Nenhuma mensagem recebida.</p>
+                {% endif %}
         </section>
     </main>
     <footer>

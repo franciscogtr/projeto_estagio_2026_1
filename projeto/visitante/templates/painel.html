@@ -1,0 +1,65 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="icon" type="image/png" sizes="35x35" href="{% static 'images/logo.png' %}">
+      <link rel="stylesheet" href="{% static 'css/header.css' %}">
+      <link rel="stylesheet" href="{% static 'css/home.css' %}">
+      <link rel="stylesheet" href="{% static 'css/contato.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Barber Agenda</title>
+</head>
+<body>
+   <nav id="nav_bar">
+            <nav id="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo Barber Agenda" id="img_logo">
+                <p id="p-logo"> Barber Agenda </p>
+            </nav>
+           <p class="p-text">
+                Bem-vindo, {{ user.username }}!
+           </p>
+
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button class="btn-default", type="submit">
+                    Sair
+                </button>
+            </form>
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button id="mobile_x">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </nav>
+        <div id="mobile_menu">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button class="btn-default" type="submit">
+                    Sair
+                </button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section id="dashboard-section">
+            <h1 class="title">Painel do Usuário</h1>
+            <p class="p-text">
+                Esta é a área restrita para usuários autenticados.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p class="p-text">
+            &copy; 2026 Barber Agenda. Todos os direitos reservados.
+        </p>
+    </footer>
+    <script src="{% static 'script/script.js'%}"></script>
+
+</body>
+</html>

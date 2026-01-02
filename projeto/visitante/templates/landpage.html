@@ -1,21 +1,124 @@
+{%  load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="icon" type="image/png" sizes="35x35" href="{% static 'images/logo.png' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      <link rel="stylesheet" href="{% static 'css/header.css' %}">
+      <link rel="stylesheet" href="{% static 'css/home.css' %}">
+      <link rel="stylesheet" href="{% static 'css/sobre.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <title>Barber Agenda</title>
 </head>
 <body>
-    <header>
-        <nav>
-            
+   <nav id="nav_bar">
+            <nav id="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo Barber Agenda" id="img_logo">
+                <p id="p-logo"> Barber Agenda </p>
+            </nav>
+            <ul id="nav-list">
+                <li class="nav-item" id="link_home">
+                    <!-- <a href="">Home</a> -->
+                     Início
+                </li>
+                <li class="nav-item" id="link_sobre">
+                    <!-- <a href="">Serviços</a> -->
+                     Sobre
+                </li>
+                <li class="nav-item" id="link_contato">
+                    <!-- <a href=""> Sobre</a> -->
+                     Contato
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                <a href="https://wa.me/5538988140584" class="a-btn">Fale Conosco</a>
+            </button>
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button id="mobile_x">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item" id="mobile_link_home">
+                    Início
+                </li>
+                <li class="nav-item" id="mobile_link_servicos">
+                    Sobre
+                </li>
+                <li class="nav-item" id="mobile_link_sobre">
+                     Contato
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                <a href="https://wa.me/5538988140584">Fale Conosco</a>
+            </button>
+        </div>
     </header>
     <main>
+        <section id="home">
+            <div id="div-align">
 
+            <h1 id="cta">Sua barbearia,<br>no rítmo certo</h1>
+            <p id="sub-cta">Agendamentos, clientes e serviços tudo em um só lugar.</p>
+
+        </section>
+
+        <section id="sobre-container">
+            <div id="sobre-div">
+                <h2 class="title">Sobre o Barber Agenda</h2>
+                
+                <p class="p-text">
+                    O Barber Agenda é uma plataforma inovadora desenvolvida para simplificar a gestão 
+                    de barbearias. Com ele, proprietários e barbeiros podem gerenciar agendamentos, 
+                    acompanhar o histórico dos clientes e organizar os serviços oferecidos de maneira 
+                    eficiente e prática. Nossa missão é ajudar barbearias a crescerem, proporcionando 
+                    uma experiência fluida tanto para os profissionais quanto para os clientes.
+                </p>
+            </div>
+        </section>
+        <section id="contato-container">
+            <div id="text-contato-div">
+                <h2 class="title">Envie sua mensagem</h2>
+                
+                <p class="p-text">
+                    Entre em contato conosco para saber mais sobre o Barber Agenda, tirar dúvidas ou 
+                    solicitar suporte. Estamos aqui para ajudar você a transformar a gestão da sua barbearia!
+                </p>
+               
+            </div>
+
+            <div id="submition-div">
+                <p id="p-submition">{{enviado}}</p>
+            </div>
+
+             <div id="form-contato-div">
+                <form action="{%url 'landpage'%}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="nome" id="input-nome" placeholder="Seu nome" required>
+                    <br>
+                    <input type="email" name="email" id="input-email" placeholder="Seu email" required>
+                    <br>
+                    <textarea name="mensagem" id="input-mensagem" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
+                    <br>
+                    <button type="submit" class="btn-default">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <p class="p-text">
+            &copy; 2026 Barber Agenda. Todos os direitos reservados.
+        </p>
     </footer>
 </body>
 </html>

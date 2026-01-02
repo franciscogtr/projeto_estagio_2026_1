@@ -1,0 +1,235 @@
+/* Estilização do Header */
+
+#nav_bar{
+    /* border: #fff solid 2px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4%;
+    margin-bottom: 5%;
+}
+#logo{
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+    /* border: blue 2px solid ; */
+}
+
+#p-logo{
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+#img_logo{
+    width: 50px;
+    height: 50px;
+}
+
+#nav-list{
+    display: flex;
+    list-style: none;
+    gap: 48px;
+
+}
+.nav-item{
+    color: #fff;
+    display: flex;
+    list-style: none;
+    /* border: #fff solid 2px; */
+    font-weight: 200;
+    font-size: 20px;
+    cursor: pointer;
+}
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.nav-item:hover {
+    color: #FA5003;
+}
+
+.nav-item a:hover {
+    color: #FA5003;
+}
+
+#mobile_btn{
+    display: none;
+}
+
+#mobile_nav_list{
+    display: none;
+}
+
+#mobile_menu .btn-default{
+    display: none;
+}
+#mobile_x{
+    display: none;
+}
+
+.btn-default{
+
+    margin-right: 60px;
+    background-color: #FA5003;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 900;
+    font-size: 1rem;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.btn-default a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  
+}
+
+
+
+@media screen and (max-width: 750px){
+
+    #logo{
+        margin-left: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    #p-logo{
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 900;
+    margin-left: 5px;
+    /* border: blue 2px solid ; */
+    }
+
+    #img_logo{
+        width: 40px;
+        height: 40px;
+    }
+
+    #nav_bar .btn-default{
+        margin-right: 40px;
+    }
+  
+
+    #mobile_x{
+        display: none;
+    }
+
+    #mobile_btn{
+        display: none;
+    }
+    
+    #mobile_nav_list{
+        display: none;
+    }
+    
+    #mobile_menu .btn-default{
+        display: none; 
+    }
+
+    .btn-default{
+        margin-right: 40px;
+        background-color: #FA5003;
+        color: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        padding: 10px 12px;
+        font-weight: 900;
+        font-size: 0.8rem;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color .3s ease;
+    }
+
+.btn-default a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-item{
+    color: #fff;
+    display: flex;
+    list-style: none;
+    /* border: #fff solid 2px; */
+    font-weight: 200;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+} 
+
+@media screen and (max-width: 625px){
+    #nav-list{
+        display: none;
+    }
+
+    #nav_bar .btn-default{
+        display: none;
+    }
+
+    #mobile_menu .btn-default{
+        display: block;
+        margin: 0 auto;
+        margin-top: 5%;
+    }
+
+    #mobile_btn{
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #FA5003;
+        margin-right: 40px;
+    }
+    
+    #mobile_x{
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #FA5003;
+        margin-right: 40px
+    }
+
+    #mobile_menu{
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+        margin-top: 50%;
+        min-height: 100vh;
+        /* border: #FA5003 2px solid; */
+    }
+    
+    #mobile_nav_list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    
+    }
+
+    #mobile_nav_list .nav-item{
+        list-style: none;
+        text-align: center;
+    }
+}
